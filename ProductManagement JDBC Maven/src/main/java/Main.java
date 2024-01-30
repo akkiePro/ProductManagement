@@ -23,7 +23,7 @@ public class Main {
 
         System.out.println("============== all products ===================");
         // all products
-//        service.displayAllProducts();   // findAll()
+        service.displayAllProducts();   // findAll()
 
         System.out.println("============== find by ===================");
         //find by text
