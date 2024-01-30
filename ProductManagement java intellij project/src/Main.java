@@ -24,6 +24,8 @@ public class Main {
         // all products
         service.displayAllProducts();   // findAll()
 
+        System.out.println("============== find by ===================");
+        //find by text
         service.findByTxt("white");
 
     }
