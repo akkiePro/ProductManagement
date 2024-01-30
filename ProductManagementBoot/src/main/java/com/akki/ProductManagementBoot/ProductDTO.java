@@ -1,42 +1,17 @@
 package com.akki.ProductManagementBoot;
 
-import jakarta.persistence.*;
+public class ProductDTO {
 
-@Entity
-public class Product {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
     private String name;
     private String type;
     private String place;
     private int warranty;
 
-    public Product() {
-    }
-
-    /*public Product(int id, String name, String type, String place, int warranty) {
-        this.id = id;
+    public ProductDTO(String name, String type, String place, int warranty) {
         this.name = name;
         this.type = type;
         this.place = place;
         this.warranty = warranty;
-    }*/
-
-    public Product(String name, String type, String place, int warranty) {
-        this.name = name;
-        this.type = type;
-        this.place = place;
-        this.warranty = warranty;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -73,9 +48,8 @@ public class Product {
 
     @Override
     public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
+        return "ProductDTO{" +
+                "name='" + name + '\'' +
                 ", type='" + type + '\'' +
                 ", place='" + place + '\'' +
                 ", warranty=" + warranty +

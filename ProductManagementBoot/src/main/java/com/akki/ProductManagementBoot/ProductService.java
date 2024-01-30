@@ -9,7 +9,7 @@ import java.util.List;
 public class ProductService {
 
     @Autowired
-    private ProductDB db;
+    private ProductDAO db;
 
     public void addProduct(Product product) {
         db.save(product);
@@ -20,11 +20,11 @@ public class ProductService {
         products.forEach(System.out::println);
     }
 
-    /*public void findByTxt(String text) {
+    public void findByTxt(String text) {
         String txt = text.toLowerCase();
 
-        List<Product> matchedProducts = db.findByTxt(txt);
+        List<ProductDTO> matchedProducts = db.findForTxt(txt);
         matchedProducts.forEach(System.out::println);
-    }*/
+    }
 
 }
