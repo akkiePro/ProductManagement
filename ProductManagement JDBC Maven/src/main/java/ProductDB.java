@@ -15,7 +15,7 @@ public class ProductDB {
     }
 
     public void save(Product product) {
-        String query = "INSERT INTO public.\"Product\" (name, type, place, warranty) VALUES (?, ?, ?, ?)";
+        String query = "INSERT INTO public.\"product\" (name, type, place, warranty) VALUES (?, ?, ?, ?)";
         try {
             PreparedStatement st = conn.prepareStatement(query);
 
@@ -32,7 +32,7 @@ public class ProductDB {
 
     public List<Product> findAll() {
         List<Product> products = new ArrayList<>();
-        String query = "SELECT name, type, place, warranty FROM public.\"Product\"";
+        String query = "SELECT name, type, place, warranty FROM public.\"product\"";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery();
@@ -54,7 +54,7 @@ public class ProductDB {
 
     public List<Product> findByTxt(String txt) {
         List<Product> products = new ArrayList<>();
-        String query = "SELECT name, type, place, warranty FROM public.\"Product\" WHERE name ILIKE '%" + txt + "%' OR type ILIKE '%" + txt + "%' OR place ILIKE '%" + txt + "%'";
+        String query = "SELECT name, type, place, warranty FROM public.\"product\" WHERE name ILIKE '%" + txt + "%' OR type ILIKE '%" + txt + "%' OR place ILIKE '%" + txt + "%'";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             ResultSet rs = st.executeQuery();
